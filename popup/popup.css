@@ -1,0 +1,199 @@
+/* Base */
+html{
+  background: transparent !important;
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 10px;
+  background: transparent !important;
+  color: #fff;
+}
+
+/* Glassmorphic popup with RGB ambient border */
+#container {
+  width: 100%;
+  height: 100%;
+  border-radius: 14px;
+
+
+  /* Glassmorphism */
+  background: rgba(255, 0, 0, 0.12);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  /* Inner border */
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  /* Glow animation */
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.35);
+  overflow: hidden;
+}
+
+/* RGB chasing ambient light */
+#container::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    red,
+    orange,
+    yellow,
+    lime,
+    cyan,
+    blue,
+    magenta,
+    red
+  );
+  background-size: 400% 400%;
+  animation: rgb-chase 6s linear infinite;
+  z-index: -1;
+  filter: blur(14px);
+  opacity: 0.85;
+}
+
+@keyframes rgb-chase {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 400% 50%; }
+}
+
+/* Text */
+h2 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* Reset / base */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 12px;
+  background: transparent !important;
+  color: #ffffff;
+}
+
+/* Glassmorphic popup container */
+#container {
+  width: 250px;
+  padding: 16px;
+  border-radius: 1rem;
+  position: relative;
+
+  /* Glass effect */
+  background: rgba(255, 0, 0, 0.12);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  /* Inner border */
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  /* Depth */
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.35);
+  overflow: hidden;
+}
+
+/* RGB ambient chasing glow */
+#container::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    red,
+    orange,
+    yellow,
+    lime,
+    cyan,
+    blue,
+    magenta,
+    red
+  );
+  background-size: 400% 400%;
+  animation: rgb-chase 6s linear infinite;
+  filter: blur(16px);
+  z-index: -1;
+  opacity: 0.9;
+}
+
+@keyframes rgb-chase {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 400% 50%; }
+}
+
+/* Headings */
+h2 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 14px;
+  margin: 14px 0 6px;
+  color: #ffd6d6;
+}
+
+/* Text */
+p {
+  font-size: 13px;
+  margin: 4px 0;
+}
+
+#risk-score {
+  font-weight: bold;
+}
+
+/* Technology list */
+#tech-list {
+  padding-left: 16px;
+  margin: 6px 0;
+  font-size: 13px;
+}
+
+#tech-list li {
+  margin-bottom: 3px;
+}
+
+/* Button styling */
+button {
+  margin-top: 12px;
+  width: 100%;
+  padding: 8px 14px;
+
+  background: linear-gradient(135deg, #ff3b3b, #ff0000);
+  color: white;
+  border: none;
+  border-radius: 0.6rem;
+
+  cursor: pointer;
+  font-weight: bold;
+  letter-spacing: 0.4px;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+/* Button hover animation */
+button:hover {
+  background: linear-gradient(135deg, #00e5ff, #0078ff);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 0 18px rgba(0, 229, 255, 0.9);
+}
+
+/* Button click */
+button:active {
+  transform: scale(0.96);
+}
+html,
+body {
+  background: transparent !important;
+}
+
+#container::before {
+  animation: rgb-chase 16s linear infinite;
+  opacity: 0.75;
+  filter: blur(18px);
+}

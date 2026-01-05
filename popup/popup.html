@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Tech Safety Extension</title>
+  <link rel="stylesheet" href="../popup/popup.css">
+</head>
+<body>
+  <div id="container">
+    <h2>Site Safety Check</h2>
+
+    <p><strong>Current Site:</strong> <span id="site-url">Loading...</span></p>
+    <p><strong>Risk Score:</strong> <span id="risk-score">--</span></p>
+    <p id="risk-message">Analyzing...</p>
+
+    <!-- New section for technologies -->
+    <h3>Detected Technologies</h3>
+    <ul id="tech-list">
+      <li>Loading...</li>
+    </ul>
+
+    <!-- New section for WHOIS info -->
+    <h3>Domain Info</h3>
+    <p><strong>Registrar:</strong> <span id="whois-registrar">--</span></p>
+    <p><strong>Creation Date:</strong> <span id="whois-date">--</span></p>
+
+    <button id="rescan-btn">Rescan Site</button>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
