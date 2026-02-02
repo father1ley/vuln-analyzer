@@ -1,30 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Tech Safety Extension</title>
-  <link rel="stylesheet" href="../popup/popup.css">
+  <meta charset="UTF-8" />
+  <title>Site Safety Check</title>
+  <link rel="stylesheet" href="popup.css" />
 </head>
+
 <body>
   <div id="container">
-    <h2>Site Safety Check</h2>
+    <h2>🔐 Site Safety</h2>
 
-    <p><strong>Current Site:</strong> <span id="site-url">Loading...</span></p>
-    <p><strong>Risk Score:</strong> <span id="risk-score">--</span></p>
-    <p id="risk-message">Analyzing...</p>
+    <!-- Score -->
+    <div id="scoreBox">
+      <span id="score">--</span>
+      <span class="label">/ 100</span>
+      <span id="riskLevel" class="risk-level"></span>
+    </div>
 
-    <!-- New section for technologies -->
-    <h3>Detected Technologies</h3>
-    <ul id="tech-list">
-      <li>Loading...</li>
-    </ul>
+    <!-- Status Message -->
+    <p id="message">Scanning...</p>
 
-    <!-- New section for WHOIS info -->
-    <h3>Domain Info</h3>
-    <p><strong>Registrar:</strong> <span id="whois-registrar">--</span></p>
-    <p><strong>Creation Date:</strong> <span id="whois-date">--</span></p>
+    <!-- Malware Warning -->
+    <div id="malwareBox" class="hidden">
+      <h3>🚨 Threat Detected</h3>
+      <p id="threats"></p>
+    </div>
 
-    <button id="rescan-btn">Rescan Site</button>
+    <!-- Technologies -->
+    <div id="techBox">
+      <h3>🧩 Technologies</h3>
+      <ul id="techList">
+        <li>Scanning…</li>
+      </ul>
+    </div>
+
+    <!-- WHOIS / Domain Info -->
+    <div id="whoisBox">
+      <h3>🧾 Domain Info</h3>
+      <p><strong>Registrar:</strong> <span id="whoisRegistrar">--</span></p>
+      <p><strong>Created:</strong> <span id="whoisDate">--</span></p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <button id="rescanBtn">Rescan</button>
+      <button id="exportBtn">Export Security Report</button>
+
+    </footer>
   </div>
 
   <script src="popup.js"></script>

@@ -1,199 +1,201 @@
-/* Base */
-html{
-  background: transparent !important;
-}
+/* ================= Base ================= */
+html,
 body {
-  font-family: Arial, sans-serif;
-  margin: 10px;
+  margin: 0;
+  padding: 0;
   background: transparent !important;
-  color: #fff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #eaeaea;
 }
 
-/* Glassmorphic popup with RGB ambient border */
+/* ================= Container ================= */
 #container {
-  width: 100%;
-  height: 100%;
+  width: 270px;
+  padding: 16px;
   border-radius: 14px;
-
-
-  /* Glassmorphism */
-  background: rgba(255, 0, 0, 0.12);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-
-  /* Inner border */
-  border: 1px solid rgba(255, 255, 255, 0.25);
-
-  /* Glow animation */
-  box-shadow: 0 0 20px rgba(255, 0, 0, 0.35);
-  overflow: hidden;
+  background: rgba(24, 24, 28, 0.88);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.55);
 }
 
-/* RGB chasing ambient light */
-#container::before {
-  content: "";
-  position: absolute;
-  inset: -2px;
-  border-radius: inherit;
-  background: linear-gradient(
-    90deg,
-    red,
-    orange,
-    yellow,
-    lime,
-    cyan,
-    blue,
-    magenta,
-    red
-  );
-  background-size: 400% 400%;
-  animation: rgb-chase 6s linear infinite;
-  z-index: -1;
-  filter: blur(14px);
-  opacity: 0.85;
-}
-
-@keyframes rgb-chase {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 400% 50%; }
-}
-
-/* Text */
+/* ================= Headings ================= */
 h2 {
   font-size: 16px;
-  margin-bottom: 10px;
-}
-
-/* Reset / base */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 12px;
-  background: transparent !important;
+  margin: 0 0 10px;
   color: #ffffff;
 }
 
-/* Glassmorphic popup container */
-#container {
-  width: 250px;
-  padding: 16px;
-  border-radius: 1rem;
-  position: relative;
-
-  /* Glass effect */
-  background: rgba(255, 0, 0, 0.12);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-
-  /* Inner border */
-  border: 1px solid rgba(255, 255, 255, 0.25);
-
-  /* Depth */
-  box-shadow: 0 0 25px rgba(255, 0, 0, 0.35);
-  overflow: hidden;
-}
-
-/* RGB ambient chasing glow */
-#container::before {
-  content: "";
-  position: absolute;
-  inset: -3px;
-  border-radius: inherit;
-  background: linear-gradient(
-    90deg,
-    red,
-    orange,
-    yellow,
-    lime,
-    cyan,
-    blue,
-    magenta,
-    red
-  );
-  background-size: 400% 400%;
-  animation: rgb-chase 6s linear infinite;
-  filter: blur(16px);
-  z-index: -1;
-  opacity: 0.9;
-}
-
-@keyframes rgb-chase {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 400% 50%; }
-}
-
-/* Headings */
-h2 {
-  font-size: 16px;
-  margin-bottom: 10px;
-}
-
 h3 {
-  font-size: 14px;
+  font-size: 12.5px;
   margin: 14px 0 6px;
-  color: #ffd6d6;
+  color: #cfcfcf;
+  font-weight: 500;
 }
 
-/* Text */
-p {
+/* ================= Score ================= */
+#scoreBox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 6px 0 6px;
+}
+
+#score {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.label {
+  font-size: 12px;
+  color: #9a9a9a;
+}
+
+/* Score colors */
+.score-safe {
+  color: #4caf50;
+}
+
+.score-warning {
+  color: #ffb74d;
+}
+
+.score-danger {
+  color: #ff5252;
+}
+
+/* ================= Risk Badge ================= */
+.risk-level {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 999px;
+}
+
+.risk-safe {
+  background: rgba(76, 175, 80, 0.2);
+  color: #9fe3a3;
+}
+
+.risk-warning {
+  background: rgba(255, 183, 77, 0.2);
+  color: #ffd180;
+}
+
+.risk-danger {
+  background: rgba(255, 82, 82, 0.25);
+  color: #ffb3b3;
+}
+
+/* ================= Message ================= */
+#message {
   font-size: 13px;
-  margin: 4px 0;
+  margin: 6px 0 10px;
+  color: #cfcfcf;
 }
 
-#risk-score {
-  font-weight: bold;
+/* ================= Malware Warning ================= */
+#malwareBox {
+  margin-top: 10px;
+  padding: 8px;
+  border-radius: 8px;
+  background: rgba(140, 0, 0, 0.25);
+  border: 1px solid rgba(255, 90, 90, 0.35);
 }
 
-/* Technology list */
-#tech-list {
-  padding-left: 16px;
-  margin: 6px 0;
-  font-size: 13px;
+#malwareBox h3 {
+  margin: 0 0 4px;
+  color: #ff9a9a;
 }
 
-#tech-list li {
-  margin-bottom: 3px;
+#threats {
+  font-size: 12px;
+  color: #ffdada;
 }
 
-/* Button styling */
-button {
+.hidden {
+  display: none;
+}
+
+/* ================= Section Divider ================= */
+.section {
   margin-top: 12px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ================= Technology Pills ================= */
+#techList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 0;
+  margin: 6px 0 0;
+}
+
+#techList li {
+  list-style: none;
+  padding: 4px 9px;
+  border-radius: 999px;
+  font-size: 12px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #eeeeee;
+}
+
+/* ================= Domain Info ================= */
+#whoisBox p {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin: 4px 0;
+  color: #d0d0d0;
+}
+
+#whoisBox strong {
+  font-weight: 500;
+  color: #bdbdbd;
+}
+
+/* ================= Footer ================= */
+footer {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ================= Buttons ================= */
+button {
   width: 100%;
-  padding: 8px 14px;
-
-  background: linear-gradient(135deg, #ff3b3b, #ff0000);
-  color: white;
-  border: none;
-  border-radius: 0.6rem;
-
+  padding: 9px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 8px;
   cursor: pointer;
-  font-weight: bold;
-  letter-spacing: 0.4px;
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    background 0.3s ease;
+  border: none;
+  transition: background 0.2s ease, transform 0.1s ease;
 }
 
-/* Button hover animation */
-button:hover {
-  background: linear-gradient(135deg, #00e5ff, #0078ff);
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 0 18px rgba(0, 229, 255, 0.9);
+#rescanBtn {
+  background: #2f80ed;
+  color: #ffffff;
 }
 
-/* Button click */
+#rescanBtn:hover {
+  background: #3a8df5;
+}
+
+#exportBtn {
+  background: transparent;
+  color: #d0d0d0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#exportBtn:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
 button:active {
-  transform: scale(0.96);
-}
-html,
-body {
-  background: transparent !important;
-}
-
-#container::before {
-  animation: rgb-chase 16s linear infinite;
-  opacity: 0.75;
-  filter: blur(18px);
+  transform: scale(0.97);
 }
