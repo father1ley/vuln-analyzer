@@ -1,8 +1,8 @@
 console.log("✅ Background service worker started");
 
 // ================= API KEYS =================
-const WHOIS_API_KEY = "at_jYvHDBuLvObJXbWcWGw4gAVXxnfmg";
-const SAFE_BROWSING_API_KEY = "AIzaSyDLrnrsH7t51zg0iqncZ7zsjh5vvILOAFk";
+const WHOIS_API_KEY = "";
+const SAFE_BROWSING_API_KEY = "";
 
 // ================= WHOIS =================
 async function fetchWhoisData(domain) {
